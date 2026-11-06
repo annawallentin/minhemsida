@@ -19,7 +19,7 @@ Det här projektet är en webbapplikation där användare kan skapa ett konto, l
 - **MAMP** – lokal utvecklingsmiljö
 
 ## Databas
-Projektet använder SQLite för att lagra information om användare och inlägg. Databasen innehåller bland annat tabellerna `users` och `posts`.
+Projektet använder SQLite för att lagra information om användare och inlägg. Databasen innehåller bland annat tabellerna users och posts.
 
 ## Skärmbilder
 Här kommer skärmbilder som visar webbapplikationens utseende och funktioner.
