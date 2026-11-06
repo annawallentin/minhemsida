@@ -26,7 +26,11 @@ Här kommer skärmbilder som visar webbapplikationens utseende och funktioner.
 
 ### Exempel på webbplatsen
 
-![Min webbplats](Bild%202026-11-06%20kl.%2015.51.jpeg)
+### Bild 1 – Inloggningssidan
+![Inloggningssidan](Bild%202026-11-06%20kl.%2015.51.jpeg)
+
+### Bild 2 – Registreringssidan
+![Registreringssidan](Bild%202026-11-06%20kl.%2015.53.jpeg)
 
 
 ## Köra projektet lokalt
