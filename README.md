@@ -24,6 +24,11 @@ Projektet använder SQLite för att lagra information om användare och inlägg.
 ## Skärmbilder
 Här kommer skärmbilder som visar webbapplikationens utseende och funktioner.
 
+### Exempel på webbplatsen
+
+![Min webbplats](Bild%202026-11-06%20kl.%2015.51.jpeg)
+
+
 ## Köra projektet lokalt
 Projektet har utvecklats och testats lokalt med MAMP.
 
