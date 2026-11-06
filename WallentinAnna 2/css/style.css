@@ -1,0 +1,591 @@
+/* Bakgrundsfärgen för hela sidan, rosa ton */
+
+body {
+    background-color: rgb(242, 178, 210);
+    margin: 0;
+    font-family: inherit;
+}
+/* h1 rubriker ska se ut såhär. */
+h1 {
+    font-size: 1.6rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 500;
+    margin: 0 0 0.5rem;
+}
+/* h2 rubriker ska se ut såhär. */
+h2 {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #444;
+    margin: 0 0 1.5rem;
+}
+
+/* Här är designen för min header. Mörk header som ska följa med när man skrollar.*/
+
+.site-header {
+    background-color: #222;
+    color: #fff;
+    padding: 0 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+/* Centrerar innehållet och sätter höjd på headern */
+.header-inner {
+    max-width: 700px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+}
+/* Loggan är en länk men ska se ut som text.
+   text-decoration: none tar bort understruken länkstil.
+   Georgia för att matcha h1-stilen på resten av sidan. */
+.logo {
+    color: #fff;
+    text-decoration: none;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 1rem;
+}
+/* Lätt fade vid hover för att ge feedback */
+.logo:hover { opacity: 0.75; }
+
+/* Navigeringslänkarna läggs ut på en rad med gap mellan sig.
+   align-items: center ser till att de sitter på samma höjd. */
+.main-nav {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.main-nav a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 0.875rem;
+    transition: color 0.15s;
+}
+/* Länkarna blir heltvita när man hovrar för att visa att de är klickbara. */
+.main-nav a:hover { color: #fff; }
+
+/* Logout-knappen sticker ut från de vanliga navlänkarna genom att
+   ha samma rosa färg som sidans bakgrund. color !important behövs
+   för att skriva över den nedärvda vita länkfärgen från .main-nav a. */
+.btn-logout {
+    background-color: rgb(242, 178, 210);
+    color: #222 !important;
+    padding: 6px 14px;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.btn-logout:hover { opacity: 0.85; }
+
+/* Lite luft runt sidans huvudinnehåll så det inte trycks ihop mot kanterna. */
+.site-main { padding: 2rem; }
+
+/* Primärknappen används på många ställen i appen, t.ex. för att
+   skicka formulär eller navigera vidare. inline-flex gör att
+   eventuella ikoner och text hamnar på rad med varandra. */
+
+.btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    background: #222;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 22px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: none;
+    transition: opacity 0.15s, transform 0.1s;
+}
+/* Knappen tonas lite vid hover för att visa att den är interaktiv. */
+.btn-primary:hover { opacity: 0.82; }
+.btn-primary:active { transform: scale(0.98); }
+
+/* delade formulärsstilar*/
+
+.form-row {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 1.25rem;
+}
+
+.form-row label,
+.form-group label {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #444;
+}
+
+
+/* Gemensam stil för alla textbaserade inputfält */
+
+.form-row input[type="text"],
+.form-row input[type="email"],
+.form-row input[type="password"],
+.form-row input[type="file"] {
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 0.95rem;
+    font-family: inherit;
+    outline: none;
+    transition: border-color 0.15s;
+    background: #fff;
+}
+
+.form-row input:focus {
+    border-color: #888;
+    box-shadow: 0 0 0 3px rgba(0,0,0,0.06);
+}
+
+/* Felmeddelanden visas i rött under fält som inte valideras. */
+.error, .field-error {
+    font-size: 0.8rem;
+    color: #c0392b;
+    min-height: 16px;
+    display: block;
+}
+
+/* Startsidan */
+
+.welcome-container {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 5rem 2rem 4rem;
+}
+
+.welcome-text {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+/* h1 rubriker på startsidan */
+.welcome-text h1 {
+    font-size: 3rem;
+    font-weight: 400;
+    font-family: Georgia, serif;
+    color: #1a1a1a;
+    line-height: 1.15;
+    margin-bottom: 1rem;
+}
+
+.welcome-text h1 em {
+    font-style: italic;
+    color: #8a2a45;
+}
+/* h2 rubriker på startsidan */
+.welcome-text h2 {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #555;
+    margin-bottom: 2.5rem;
+    font-family: sans-serif;
+}
+/* knapp på startsidan */
+.welcome-buttons {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+}
+
+/* Sekundär knapp utan fyllning */
+.btn-outline {
+    background: transparent;
+    color: #222;
+    border: 1.5px solid #222;
+    border-radius: 8px;
+    padding: 10px 22px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    transition: opacity 0.15s;
+}
+/* för att få lite hover effekt */
+.btn-outline:hover { opacity: 0.6; }
+
+/* Feature-korten visas på rad och radbryts automatiskt
+   på smala skärmar tack vare flex-wrap: wrap. */
+.feature-cards {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+/* Varje kort har vit bakgrund mot den rosa sidan för kontrast */
+.feature-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 1.75rem 1.5rem;
+    width: 180px;
+    text-align: center;
+    border: 1px solid rgba(0,0,0,0.06);
+}
+/* Ikonen i toppen av kortet är i accentfärgen för att dra blicken.
+   display: block gör att margin-bottom faktiskt fungerar. */
+.feature-card i {
+    font-size: 1.75rem;
+    color: #c0506a;
+    display: block;
+    margin-bottom: 0.75rem;
+}
+
+.feature-card h3 {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #222;
+    font-family: sans-serif;
+    margin-bottom: 6px;
+}
+/* Beskrivningstexten är liten och grå, den ska bara
+   komplettera rubriken, vill inte att den ska ta fokus. */
+.feature-card p {
+    font-size: 0.8rem;
+    color: #888;
+    line-height: 1.5;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+
+
+/* logga in/ registrera sig delen */
+/* Smal centrerad ruta för inloggnings- och registreringsformuläret. Lite ljusare
+rosa än bakgrunden för att den ska kunna sticka ut */
+.form-container {
+    max-width: 420px;
+    margin: 4rem auto;
+    background: rgb(251, 208, 229);
+    border-radius: 12px;
+    padding: 2.5rem;
+}
+
+/* inläggssidan */
+
+.posts-container {
+    max-width: 620px;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+/* lite luft under söksektionen, innan inläggen börjar. */
+.search-section { margin-bottom: 2rem; }
+
+/* Sökfältet och sökknappen ligger på samma rad. */
+.search-group {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+/* Sökfältet tar upp allt tillgängligt utrymme tack vare flex: 1,
+   så knappen bara tar den plats den behöver. */
+.search-group input[type="text"] {
+    flex: 1;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 0.95rem;
+    font-family: inherit;
+    outline: none;
+    transition: border-color 0.15s;
+    background: #fff;
+}
+
+.search-group input[type="text"]:focus {
+    border-color: #888;
+    box-shadow: 0 0 0 3px rgba(0,0,0,0.06);
+}
+/* Sökknappen matchar btn-primary-stilen men är definierad
+   separat här för att kunna justeras oberoende om det behövs. */
+.search-button {
+    background: #222;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 18px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: opacity 0.15s;
+}
+
+.search-button:hover { opacity: 0.82; }
+/* rensa knappen, har gjort en diskret design */
+.rensa-button {
+    color: #888;
+    font-size: 0.85rem;
+    text-decoration: none;
+    padding: 10px 8px;
+}
+
+.rensa-button:hover { color: #222; }
+/* Visar t.ex. "Visar 3 resultat för 'hej'" under sökfältet. */
+.search-result-info {
+    margin-top: 0.75rem;
+    font-size: 0.875rem;
+    color: #555;
+}
+
+.posts-section { margin-top: 2rem; }
+
+.posts-section h2 {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin: 0 0 1rem;
+    color: #222;
+}
+
+
+/* Nytt inläggs formulär */
+.new-post-section {
+    max-width: 620px;
+    padding: 1.5rem 0;
+    margin: 0 auto;
+}
+/* Grön bekräftelsetext som visas t.ex. när ett inlägg
+   har publicerats */
+.feedback-msg {
+    font-size: 0.875rem;
+    color: green;
+    min-height: 20px;
+    margin-bottom: 0.5rem;
+}
+
+/* Wrapper för formulärfält med label, samma mönster
+   som .form-row men används specifikt i inläggsformuläret. */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 1rem;
+}
+/* textarean för inläggstexten*/
+.form-group textarea {
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 12px 14px;
+    font-size: 0.95rem;
+    font-family: inherit;
+    resize: vertical;
+    line-height: 1.6;
+    transition: border-color 0.15s;
+    outline: none;
+    background: #fff;
+}
+
+.form-group textarea:focus {
+    border-color: #888;
+    box-shadow: 0 0 0 3px rgba(0,0,0,0.06);
+}
+/* Räknaren för antal tecken kvar, placerad till höger
+   under textarean. Liten och grå för att inte störa. */
+.char-counter {
+    font-size: 0.75rem;
+    color: #888;
+    text-align: right;
+}
+
+/* Filuppladdningsfältet har streckad kant för att ge en
+   känsla av ett dropzone-område. Ljusgrå bakgrund
+   signalerar att det är ett annat slags fält. */
+.form-group input[type="file"] {
+    border: 1px dashed #bbb;
+    border-radius: 8px;
+    background: #f9f9f9;
+    padding: 10px 14px;
+    font-size: 0.85rem;
+    cursor: pointer;
+}
+/* Kantfärgen mörknar och bakgrunden blir vit vid hover
+   för att signalera att fältet är aktivt och klickbart. */
+.form-group input[type="file"]:hover {
+    border-color: #888;
+    background: #fff;
+}
+
+/* inläggslista*/
+
+.posts-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+/* Varje inlägg är ett kort med en lite ljusare rosa bakgrund
+   än sidan, så att de syns tydligt utan hård skugga eller kant. */
+.post-card {
+    background: rgb(251, 208, 229);
+    border-radius: 8px;
+    padding: 14px 16px;
+}
+/* Rad med avatar, användarnamn och datum.
+   gap: 10px ger luft mellan bilden och texten. */
+.post-author {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+/* Rund profilbild. object-fit: cover gör att bilden
+   fyller cirkeln utan att sträckas ut. */
+.avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+/* Visas om användaren inte har laddat upp en profilbild.
+   Mörk bakgrund med vit initialbokstav centrerad i mitten. */
+.avatar-placeholder {
+    background: #222;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.author-name {
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+/* Datumet pushas till höger i raden med margin-left */
+.post-date {
+    font-size: 0.8rem;
+    color: #777;
+    margin-left: auto;
+}
+
+.post-body p {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Bilden i inlägget får lite luft ovanför och rundade hörn
+   som matchar kortets utseende. max-width, 100% gör att
+   bilden aldrig är bredare än kortet. */
+
+.post-image img {
+    margin-top: 10px;
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+.no-posts {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* profilsidan */
+/* Profilsidan följer samma maxbredd som inläggsflödet
+   för att hålla sidan sammanhållen. */
+.profile-page {
+    max-width: 620px;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+/* Generell komponent för återkoppling till användaren,
+   t.ex. "Profilen sparades" eller "Något gick fel".
+   Bas-stilen delas och kompletteras med modifier-klasser nedan. */
+.alert {
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+}
+
+.alert-success {
+    background: #d4edda;
+    color: #2d6a3f;
+}
+
+.alert-error {
+    background: #fde8e8;
+    color: #c0392b;
+}
+/* Visar användarens nuvarande profilinfo (bild, namn, e-post)
+   i en tydlig ruta överst på profilsidan. */
+.profile-info-box {
+    background: rgb(251, 208, 229);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+}
+/* Lägger bilden och textinformationen bredvid varandra
+   med gap för luft emellan. */
+.profile-info-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+/* Profilbilden på profilsidan är större än avataren i inläggen
+   eftersom det är mer fokus på användaren här. */
+.profile-image-large {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+/* Visas om användaren inte har en profilbild.
+   Samma stil som avatar-placeholder men skalad för
+   den större storleken med större font-size. */
+.profile-image-placeholder {
+    background: #222;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+
+.profile-username {
+    font-weight: 500;
+    margin: 0 0 4px;
+    font-size: 0.95rem;
+}
+
+.profile-email {
+    color: #555;
+    font-size: 0.875rem;
+    margin: 0;
+}
+/* Sektionskort för t.ex. "Byt lösenord" och "Redigera profil".
+   Båda klasserna delar samma styling för ett enhetligt utseende. */
+.profile-section,
+.profile-edit-section {
+    background: rgb(251, 208, 229);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+/* Sektionsrubriken är lite diskretare än sidans h2, ska inte dominera */
+.profile-section h2,
+.profile-edit-section h2 {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #222;
+    margin: 0 0 1.25rem;
+}
+/* Begränsar bildens storlek i inlägg så att stora bilder
+   inte tar över hela flödet. */
+.post-image img {
+    max-width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-top: 10px;
+}
